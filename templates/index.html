@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--    <link href="static/css/bulma.min.css" rel="stylesheet">-->
+    <link href="https://cdn.bootcss.com/bulma/0.7.5/css/bulma.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>NER</title>
+</head>
+<body>
+<div class="column is-half is-offset-one-quarter">
+    <section class="section">
+        <form action="/process" method="post">
+            <div class="field">
+                <label class="label">点播NER输入</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="" name="param" value="{% if res %}{{init}}{% endif %}">
+                </div>
+            </div>
+            <div class="field is-grouped is-grouped-centered">
+                <div class="control">
+                    <button class="button is-link">提交</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <section class="section">
+        {% if res %}
+        <div class="box">
+            解析结果为 {{ res }}
+        </div>
+        {% endif %}
+    </section>
+</div>
+</body>
+</html>
